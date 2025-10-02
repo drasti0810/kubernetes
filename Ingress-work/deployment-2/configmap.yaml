@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: webapp-content-two
+  namespace: app-demo
+data:
+  index.html: |
+    <!doctype html>
+    <html>
+      <head><title>K8s Web App</title></head>
+      <body>
+        <h1>Hello from Kubernetes!</h1>
+        <p>This page is served by deployment-2 nginx behind a Service and Ingress.</p>
+      </body>
+    </html>
