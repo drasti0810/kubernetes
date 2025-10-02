@@ -3,6 +3,8 @@ kind: Ingress
 metadata:
   name: webapp-ingress
   namespace: app-demo
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: / #Without the nginx.ingress.kubernetes.io/rewrite-target: / annotation, NGINX ingress just passes the full path (/deploymentone or /deploymenttwo) → your nginx container can’t serve it.
 spec:
   ingressClassName: nginx
   rules:
